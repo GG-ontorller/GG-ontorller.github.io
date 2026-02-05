@@ -7,7 +7,7 @@
   <meta name="description" content="葛星宇的学术主页。" />
   <meta name="color-scheme" content="light dark">
   <meta property="og:title" content="葛星宇 | 个人主页" />
-  <meta property="og:description" content="葛星宇 —— 研究方向、论文、经历与联系信息。" />
+  <meta property="og:description" content="葛星宇 ， 研究方向、论文、经历与联系信息。" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="/avatar.png" />
   <meta name="format-detection" content="telephone=no,email=no,address=no" />
@@ -46,6 +46,18 @@
     ul.clean li:first-child{border-top:none}
     a.link{color:var(--accent); text-decoration:none}
     a.link:hover{text-decoration:underline}
+    /* Publications */
+    .pub-item{display:flex; gap:14px; align-items:flex-start}
+    .pub-year{min-width:64px; text-align:right; padding-top:2px}
+    .pub-main{flex:1}
+    .pub-title{font-weight:650; margin:0 0 4px}
+    .pub-authors,.pub-venue{color:var(--muted); font-size:14px; margin:2px 0}
+    .pub-links{display:flex; gap:10px; flex-wrap:wrap; margin-top:8px}
+    .pub-links a{font-size:13px; padding:4px 10px; border:1px solid var(--line); border-radius:999px; color:var(--muted); text-decoration:none}
+    .pub-links a:hover{color:var(--accent); border-color:color-mix(in srgb, var(--accent) 35%, var(--line))}
+    details.bib{margin-top:10px}
+    details.bib summary{cursor:pointer; color:var(--muted); font-size:13px}
+    details.bib pre{margin:10px 0 0; padding:12px; border:1px solid var(--line); border-radius:12px; background:color-mix(in srgb, var(--card) 80%, transparent); overflow:auto; font-size:12px}
     .foot{display:flex; gap:12px; flex-wrap:wrap}
     .foot a{color:var(--muted); text-decoration:none}
     .badge{font-variant-numeric: tabular-nums; display:inline-block; padding:2px 6px; border-radius:6px; background:var(--line); color:var(--muted); font-size:12px}
@@ -63,6 +75,7 @@
       <nav aria-label="主导航">
         <a href="#about" class="active">关于我</a>
         <a href="#interests">研究方向</a>
+              <a href="#publications">论文</a>
         <a href="#experience">经历</a>
       </nav>
     </div>
@@ -90,18 +103,41 @@
 
     
 
-    <section id="experience">
+    
+
+    <section id="publications">
+      <h2>论文 / Publications</h2>
+      <div class="card">
+        <ul class="clean">
+          <li>
+            <div class="pub-item">
+              <div class="pub-year"><span class="badge">2026</span></div>
+              <div class="pub-main">
+                <div class="pub-title">Observability and approximate observability of Boolean control networks from finite offline data</div>
+                <div class="pub-authors">Xingyu GE, Tatsuya AKUTSU, Liangjie SUN, Jianquan LU, Jie ZHONG*</div>
+                <div class="pub-venue">Science China Information Sciences, 2026, 69(5) (Letter)</div>
+                <div class="pub-links">
+                  <a href="https://doi.org/10.1007/s11432-025-4750-x" title="DOI" target="_blank" rel="noopener">DOI</a>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+<section id="experience">
 
           <h2 style="margin:0 0 6px">教育</h2>
           <ul class="clean">
           
             <li>
               <div><strong>M.S., 数学（运筹学与控制论）</strong> · 浙江师范大学</div>
-              <div class="muted">2024 — 2027·导师：钟杰教授</div>
+              <div class="muted">2024 到 2027·导师：钟杰教授</div>
             </li>
             <li>
               <div><strong>Research Associates</strong> · 京都大学（kyoto university）</div>
-              <div class="muted">2025.7 — 2025.10·合作导师：阿久津达也（Tatsuya Akutsu）教授</div>
+              <div class="muted">2025.7 到 2025.10·合作导师：阿久津达也（Tatsuya Akutsu）教授</div>
             </li>
           </ul>
         </div>

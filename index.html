@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>你的姓名 | Academic Homepage</title>
+  <style>
+    body{max-width:900px;margin:52px auto;padding:0 18px;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;line-height:1.65;color:#111}
+    header{display:flex;gap:18px;align-items:center;margin-bottom:22px}
+    .photo{width:112px;height:112px;border-radius:16px;object-fit:cover;background:#eee}
+    h1{margin:0;font-size:28px}
+    .meta{color:#555;margin-top:6px}
+    nav{margin-top:10px}
+    nav a{margin-right:12px}
+    a{color:#0b57d0;text-decoration:none}
+    a:hover{text-decoration:underline}
+    section{margin:28px 0}
+    h2{font-size:18px;margin:0 0 10px 0}
+    ul{margin:8px 0 0 18px}
+    .pill{display:inline-block;padding:3px 10px;border:1px solid #ddd;border-radius:999px;margin:6px 6px 0 0;font-size:13px;color:#333}
+    footer{margin-top:40px;color:#777;font-size:13px}
+  </style>
+</head>
+<body>
+  <header>
+    <img class="photo" src="assets/photo.jpg" alt="photo" />
+    <div>
+      <h1>你的姓名</h1>
+      <div class="meta">硕士研究生 · 学校/学院 · 研究方向一句话概括</div>
+      <div class="meta">
+        Email <a href="mailto:yourname@xxx.com">yourname@xxx.com</a>
+        <span> | </span>
+        <a href="https://github.com/gg-ontorller">GitHub</a>
+        <span> | </span>
+        <a href="https://scholar.google.com/">Google Scholar</a>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#pub">Publications</a>
+        <a href="#proj">Projects</a>
+        <a href="#cv">CV</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section>
+    <div class="pill">Logical Dynamical Systems</div>
+    <div class="pill">Boolean Networks</div>
+    <div class="pill">Reinforcement Learning</div>
+    <div class="pill">Safe Control</div>
+  </section>
+
+  <section id="about">
+    <h2>About</h2>
+    <p>
+      这里写 3 到 6 句学术简介。建议包含你研究的问题类型、方法关键词、以及面向的应用场景或动机。
+    </p>
+  </section>
+
+  <section id="pub">
+    <h2>Publications</h2>
+    <ul>
+      <li><b>Paper title</b>, Journal or Conference, Year.</li>
+      <li><b>Paper title</b>, Journal or Conference, Year.</li>
+    </ul>
+  </section>
+
+  <section id="proj">
+    <h2>Projects</h2>
+    <ul>
+      <li><a href="https://github.com/gg-ontorller/your-repo">Project name</a>：一句话描述你的贡献与亮点。</li>
+    </ul>
+  </section>
+
+  <section id="cv">
+    <h2>CV</h2>
+    <p><a href="assets/CV.pdf">Download CV (PDF)</a></p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <ul>
+      <li>Email：yourname@xxx.com</li>
+      <li>Affiliation：你的学校与学院</li>
+      <li>Location：城市 国家</li>
+    </ul>
+  </section>
+
+  <footer>
+    © <span id="y"></span> 你的姓名
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

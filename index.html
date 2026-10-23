@@ -24,14 +24,14 @@
     body{margin:0; font-family: ui-sans-serif, -apple-system, system-ui, Segoe UI, Roboto, Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Microsoft Yahei"; background:var(--bg); color:var(--fg);}
     .container{max-width:var(--maxw); margin-inline:auto; padding:0 20px}
     header{position:sticky; top:0; backdrop-filter:saturate(180%) blur(8px); background:color-mix(in srgb, var(--bg) 80%, transparent); border-bottom:1px solid var(--line); z-index:50}
-    nav{display:flex; align-items:center; gap:18px; height:56px}
+    nav{display:flex; align-items:center; flex-wrap:wrap; gap:10px 18px; min-height:56px; padding:10px 0; box-sizing:border-box}
     nav a{color:var(--muted); text-decoration:none; font-size:14px}
     nav a:hover, nav a.active{color:var(--accent)}
     .hero{display:grid; grid-template-columns: 120px 1fr; gap:20px; align-items:center; padding:36px 0}
     .avatar{width:120px; height:120px; border-radius:50%; background:var(--line) center/cover no-repeat;}
     h1{font-size:28px; margin:0 0 6px}
     .subtitle{color:var(--muted); line-height:1.5}
-    section{padding:28px 0; border-top:1px dashed var(--line)}
+    section{padding:28px 0; border-top:1px dashed var(--line); scroll-margin-top:100px}
     section:first-of-type{border-top:none}
     h2{font-size:20px; margin:0 0 14px}
     .cards{display:grid; grid-template-columns:repeat(12,1fr); gap:14px}
@@ -49,12 +49,20 @@
     /* Publications */
     .pub-item{display:flex; gap:14px; align-items:flex-start}
     .pub-year{min-width:64px; text-align:right; padding-top:2px}
-    .pub-main{flex:1}
+    .pub-main{flex:1; min-width:0}
+    .pub-group + .pub-group{margin-top:24px}
+    .pub-group h3{font-size:17px; margin:0 0 12px}
     .pub-title{font-weight:650; margin:0 0 4px}
     .pub-authors,.pub-venue{color:var(--muted); font-size:14px; margin:2px 0}
     .pub-links{display:flex; gap:10px; flex-wrap:wrap; margin-top:8px}
     .pub-links a{font-size:13px; padding:4px 10px; border:1px solid var(--line); border-radius:999px; color:var(--muted); text-decoration:none}
     .pub-links a:hover{color:var(--accent); border-color:color-mix(in srgb, var(--accent) 35%, var(--line))}
+    @media(max-width:480px){
+      .hero{grid-template-columns:1fr}
+      .subtitle{overflow-wrap:anywhere}
+      .pub-year{min-width:44px}
+      .pub-item{gap:10px}
+    }
     details.bib{margin-top:10px}
     details.bib summary{cursor:pointer; color:var(--muted); font-size:13px}
     details.bib pre{margin:10px 0 0; padding:12px; border:1px solid var(--line); border-radius:12px; background:color-mix(in srgb, var(--card) 80%, transparent); overflow:auto; font-size:12px}
@@ -75,7 +83,7 @@
       <nav aria-label="主导航">
         <a href="#about" class="active">关于我</a>
         <a href="#interests">研究方向</a>
-              <a href="#publications">论文</a>
+        <a href="#publications">Selected Publications</a>
         <a href="#experience">经历</a>
       </nav>
     </div>
@@ -94,6 +102,7 @@
       <h2>研究方向 / Research Interests</h2>
       <div class="card">
         <ul class="clean">
+          <li><strong>Robot Learning / Embodied AI</strong>：机器人学习与具身智能。</li>
           <li><strong>Boolean / Logical Networks</strong>：稳定性、可观性、控制与优化；强化学习在逻辑网络中的应用。</li>
           <li><strong>Reinforcement Learning</strong>：数据驱动控制、奖励方程、模型先验融合。</li>
         </ul>
@@ -105,9 +114,43 @@
     
 
     <section id="publications">
-      <h2>论文 / Publications</h2>
-      <div class="card">
-        <ul class="clean">
+      <h2>Selected Publications</h2>
+      <div class="pub-group" role="group" aria-labelledby="robot-learning">
+        <h3 id="robot-learning">Robot Learning</h3>
+        <div class="card">
+          <p class="muted" style="margin:0">暂无论文条目。</p>
+        </div>
+      </div>
+      <div class="pub-group" role="group" aria-labelledby="logical-system">
+        <h3 id="logical-system">Logical System</h3>
+        <div class="card">
+          <ul class="clean">
+          <li>
+            <div class="pub-item">
+              <div class="pub-year"><span class="badge">2026</span></div>
+              <div class="pub-main">
+                <div class="pub-title">Safe Output Tracking of Boolean Control Networks via Feasible-Domain Analysis</div>
+                <div class="pub-authors">Xingyu GE, Zifan HUANG, Liangjie SUN, Jie ZHONG</div>
+                <div class="pub-venue">IEEE Control Systems Letters, 2026, 10: 2317–2322</div>
+                <div class="pub-links">
+                  <a href="https://doi.org/10.1109/LCSYS.2026.3728970" title="DOI" target="_blank" rel="noopener">DOI</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="pub-item">
+              <div class="pub-year"><span class="badge">2026</span></div>
+              <div class="pub-main">
+                <div class="pub-title">Output Tracking of Periodically Time-Varying Boolean Networks: State-Flipped Control and Q-Learning Approaches</div>
+                <div class="pub-authors">Xingyu GE, Amol YERUDKAR, Jianquan LU, Bowen LI, Feng DING, Jie ZHONG</div>
+                <div class="pub-venue">IEEE Transactions on Neural Networks and Learning Systems, 2026, Early Access</div>
+                <div class="pub-links">
+                  <a href="https://doi.org/10.1109/TNNLS.2026.3708342" title="DOI" target="_blank" rel="noopener">DOI</a>
+                </div>
+              </div>
+            </div>
+          </li>
           <li>
             <div class="pub-item">
               <div class="pub-year"><span class="badge">2026</span></div>
@@ -121,11 +164,12 @@
               </div>
             </div>
           </li>
-        </ul>
+          </ul>
+        </div>
       </div>
     </section>
 
-<section id="experience">
+    <section id="experience">
 
           <h2 style="margin:0 0 6px">教育</h2>
           <ul class="clean">
@@ -153,9 +197,7 @@
               <div class="muted">2026.03 到 2026.05·合作导师：程瑋琪（Wai-Ki Ching）教授</div>
             </li>
           </ul>
-        </div>
-      </div>
-    </section>1
+    </section>
 
     
 
@@ -172,7 +214,7 @@
   </button>
 
   <script>
-    // 激活导航项（仅：关于我 / 研究方向 / 经历）
+    // 根据当前可见区块激活导航项
     const links = [...document.querySelectorAll('header nav a')];
     const sections = links.map(a => document.querySelector(a.getAttribute('href')));
     const observer = new IntersectionObserver((entries)=>{
